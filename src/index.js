@@ -1,4 +1,4 @@
-import { select } from "d3-selection";
+import { select, selectAll } from "d3-selection";
 import { scaleBand, scaleLinear } from "d3-scale";
 import { axisBottom, axisLeft } from "d3-axis";
 import { max } from "d3-array";
@@ -23,6 +23,7 @@ export function update() {
 
   // Tip: to make your template work nicely in the story editor, ensure that all user
   // interface controls such as buttons and sliders update the state and then call update.
+  console.log("oi")
   x.domain(data.values.map(function(d) { return d.x; }));
   y.domain([0, max(data.values, function(d) { return d.y; })]);
 
@@ -30,20 +31,25 @@ export function update() {
       .attr("transform", "translate(0," + height + ")")
       .call(axisBottom(x));
 
-  g.select(".axis axis--y")
+  g.select(".axis.axis--y")
       .call(axisLeft(y).ticks(10, "%"))
-      .html("")
-  		.append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", "0.71em")
-      .attr("text-anchor", "end")
-      .text("Frequency");
+      
+  selectAll(".axis--y .tick text")
+      .attr("y", "0.32em")
+      .attr("dy", null)
+      .attr("alignment-baseline", "baseline")
+      .attr("text-anchor", "end");
+
+  selectAll(".axis--x .tick text")
+      .attr("y", 18)
+      .attr("dy", null)
+      .attr("text-anchor", "middle");
+
+  selectAll("text").attr("font-family", "Futura");
 
   var bars = g.selectAll(".bar")
     .data(data.values)
     
-
   var bars_enter = bars.enter().append("rect");
 
   var bars_update = bars.merge(bars_enter);

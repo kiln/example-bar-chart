@@ -1,62 +1,35 @@
-# The 'id' should be a string that uniquely identifies your template
-id: 'example-bar-chart'
+id: example-bar-chart
 name: Example bar chart
 description: A Flourish template
 author: Daan Louter
-
-# This template is compatible with SDK version 2
-sdk_version: 2
-
+sdk_version: 3
 build:
-  # Defines the build processes used to build your template from source.
-  # You can have any number of build processes, and changes to the relevant
-  # files will trigger the appropriate build. Here we define build scripts
-  # for JavaScript and CSS.
-
   src:
     script: npm run build
-    # You can specify a whole directory, or individual files, or both.
-    # A change inside the directory or to any of the listed files will
-    # trigger a rebuild and reload.
     directory: src
     files:
       - rollup.config.js
-
   less:
     script: npm run less
     directory: less
-
 settings:
-  # Creates a settings panel that enables the end user to set the default state for
-  # individual visualisations made with this template.
-  #
-  # Available types:
-  # • "number" >> gives a number input. Optionally add "min:", "max:", and "step:" properties.
-  # • "string" >> gives an text input
-  # • "text" >> gives a textarea
-  # • "boolean" >> gives a checkbox
-  # • "color" >> gives a color picker
-
-  - Design # Headings can be used to break up the settings into collapsible sections
-  - property: bar_fill # Refers to a property in the template's state object
-    name: Bar color # Display name for the settings panel
-    type: color # See available types above
-
+  - Design
+  - property: bar_fill
+    name: Bar color
+    type: color
 data:
-  # The data section determines how data is made available to your template,
-  # and the sample data that is used. See the documentation.
-
   - name: X values
     description: X axis values
     dataset: values
     key: x
     type: column
-    column: "data::A"
+    column: 'data::A'
     datatype: string
   - name: Y values
     description: Y axis values
     dataset: values
-    key: y
+    key: 'y'
     type: column
-    column: "data::B"
+    column: 'data::B'
     datatype: number
+version: 1.0.0

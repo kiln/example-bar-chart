@@ -61,6 +61,8 @@ export function update() {
       .attr("y", function(d) { return y(d.y); })
       .attr("width", x.bandwidth())
       .attr("height", function(d) { return height - y(d.y); });
+
+  Flourish.setHeight(parseFloat(svg.attr("height")));
 }
 
 export function draw() {

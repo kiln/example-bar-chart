@@ -23,7 +23,6 @@ export function update() {
 
   // Tip: to make your template work nicely in the story editor, ensure that all user
   // interface controls such as buttons and sliders update the state and then call update.
-  console.log("oi")
   x.domain(data.values.map(function(d) { return d.x; }));
   y.domain([0, max(data.values, function(d) { return d.y; })]);
 

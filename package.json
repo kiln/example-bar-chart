@@ -15,7 +15,7 @@
   "dependencies": {
     "d3-array": "^1.2.4",
     "d3-axis": "^1.0.12",
-    "d3-scale": "^2.2.2",
+    "d3-scale": "^4.0.2",
     "d3-selection": "^1.4.0",
     "less": "^3.9.0",
     "less-plugin-clean-css": "^1.5.1",

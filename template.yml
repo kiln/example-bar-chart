@@ -24,12 +24,10 @@ data:
     key: x
     type: column
     column: 'data::A'
-    datatype: string
   - name: Y values
     description: Y axis values
     dataset: values
     key: 'y'
     type: column
     column: 'data::B'
-    datatype: number
 version: 1.0.0

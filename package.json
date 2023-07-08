@@ -17,7 +17,7 @@
     "d3-axis": "^1.0.12",
     "d3-scale": "^2.2.2",
     "d3-selection": "^1.4.0",
-    "less": "^3.9.0",
+    "less": "^3.13.1",
     "less-plugin-clean-css": "^1.5.1",
     "rollup": "^1.17.0",
     "rollup-plugin-node-resolve": "^5.2.0",
